@@ -1,0 +1,9 @@
+[project]
+name = "club-management-system"
+version = "0.1.0"
+description = "Flask + PostgreSQL club management system"
+requires-python = ">=3.12"
+dependencies = [
+    "Flask==3.1.0",
+    "psycopg2-binary==2.9.10",
+]
