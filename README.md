@@ -11,6 +11,15 @@ A web application for managing university clubs, their members, board, events, a
 
 The interesting part of the project is the data model: it uses a **supertype/subtype (ISA) hierarchy** rooted at `Person`, three role-based login flows, a junction-table design for the many-to-many relationships, plus a view and a trigger function.
 
+## 📩 Table of contents
+
+- [Tech stack](#tech-stack)
+- [How it works](#how-it-works)
+- [The data model (ISA hierarchy)](#the-data-model-isa-hierarchy)
+- [Tables](#tables)
+- [View and trigger function](#view-and-trigger-function)
+- [Running it](#running-it)
+
 ## Tech stack
 
 | Layer    | Choice                                 |
