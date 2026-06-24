@@ -1,50 +1,76 @@
+/* Palette */
+:root {
+    --bg: #f4f7f4;
+    --surface: #ffffff;
+    --ink: #243029;
+    --muted: #5b6b60;
+    --header-bg: #3f7d58;
+    --header-ink: #ffffff;
+    --accent: #2f855a;
+    --accent-hover: #276749;
+    --border: #d7e3da;
+}
+
 /* Base styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
- 
+
 body {
-    font-family: Georgia, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
-    background-color: #ECFAE5;
+    background-color: var(--bg);
+    color: var(--ink);
     text-align: center;
 }
 
-p{
+p {
     font-size: 20px;
 }
 
 header {
-    background-color: #B0DB9C;
-    font-family: Varela Round;
-    color: #DDF6D2;
-    padding: 0.5rem;
-    font-size:24px;
-
+    background-color: var(--header-bg);
+    font-family: 'Varela Round', system-ui, sans-serif;
+    color: var(--header-ink);
+    padding: 0.75rem;
+    font-size: 24px;
 }
- 
-h1{
+
+header a {
+    color: var(--header-ink);
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+header a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+h1 {
     font-size: 56px;
+    font-family: 'Varela Round', system-ui, sans-serif;
+    color: var(--header-bg);
 }
 
 form {
     text-align: center;
     font-size: 26px;
-    padding: 10px;
-    /*width: 250px;*/
-    border: 1px solid #CAE8BD;
-    border-radius: 4px;
+    padding: 24px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(36, 48, 41, 0.06);
     margin-top: 8px;
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*gap: 10px;*/
-
 }
-div{
+
+div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,19 +78,18 @@ div{
     text-align: center;
     margin-top: 50px;
 }
+
 button {
     font-size: 18px;
-    padding: 12px 24px;   
-    background-color: #007bff; 
-    color: white;
+    padding: 12px 24px;
+    background-color: var(--accent);
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--accent-hover);
 }
-
-

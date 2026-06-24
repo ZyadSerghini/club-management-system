@@ -2,12 +2,15 @@
 <html>
 <head>
     <title>{% block title %}Club System{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
     <nav>
-      <p style="text-align:center; color:green; font-size:1em">AUI Club Management System</p>
+      <p style="text-align:center; color:#ffffff; font-size:1em">AUI Club Management System</p>
         <p style="text-align:right"><a href="{{ url_for('index') }}" >Log out</a></p>
         
         <!--<a href="{{ url_for('clubs') }}">Clubs</a> |-->
