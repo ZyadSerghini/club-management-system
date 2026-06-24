@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Club Management System{% endblock %}
+
+{% block content %}
+<div><img src="{{url_for('static', filename='logo.png')}}"></div>
+<div><form method="POST" action="/login">
+  <label for="pid">ID:</label>
+  <input type="text" name="pid" required>
+  <label for="password">Password:</label>
+  <input type="password" name="password" required><br>
+  <button type="submit">Login</button>
+</div></form>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}SAO Leader Dashboard{% endblock %}
+
+{% block content %}
+<h1>Welcome, SAO Leader!</h1>
+<p>Here are the events you're leading:</p>
+
+{% if events %}
+<div>
+  <ul>
+    {% for event in events %}
+      <li>
+        <strong>{{ event[0] }}</strong><br>
+        📅 {{ event[1] }}<br>
+        🕛 {{ event[3] }} - {{ event[4] }} <br>
+        📍 {{ event[2] }} <br>
+        <a href="{{ url_for('add_attendance', event_id=event[5]) }}">Add attendance</a>
+      </li>
+      <br>
+    {% endfor %}
+  </ul>
+  
+</div>
+{% else %}
+  <p>You are not assigned to any events yet.</p>
+{% endif %}
+
+{% endblock %}

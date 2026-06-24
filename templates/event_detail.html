@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Event Detail{% endblock %}
+{% block content %}
+<h2>{{ event[3] }}</h2>
+<p><strong>Description:</strong> {{ event[4] }}</p>
+<p><strong>Venue:</strong> {{ event[5] }}</p>
+<p><strong>Date:</strong> {{ event[6] }}</p>
+<p><strong>Start:</strong> {{ event[7] }}</p>
+<p><strong>End:</strong> {{ event[8] }}</p>
+<a href="{{ url_for('events') }}">← Back to Events</a>
+{% endblock %}

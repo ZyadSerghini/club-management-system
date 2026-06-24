@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Welcome to Club Management System</h2>
+
+<div class="card-container">
+    <a href="{{ url_for('clubs') }}"><div class="card">View Clubs</div></a>
+    <a href="{{ url_for('events') }}"><div class="card">View Events</div></a>
+</div>
+{% endblock %}

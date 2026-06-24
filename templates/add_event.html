@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Add Event{% endblock %}
+{% block content %}
+<h2>Add New Event</h2>
+<div>
+<form method="post">
+    <label>Name:</label><input name="name"><br>
+    <label>Description:</label><input name="desc"><br>
+    <label>Venue:</label><input name="venue"><br>
+    <label>Date:</label><input name="date" type="date"><br>
+    <label>Start Time:</label><input name="start" type="time"><br>
+    <label>End Time:</label><input name="end" type="time"><br>
+    <label>Club ID:</label><input name="club_id"><br>
+    <label>Leader ID:</label><input name="ldr_id"><br>
+    <button type="submit">Add</button>
+</form></div>
+{% endblock %}

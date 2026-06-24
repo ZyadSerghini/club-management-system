@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Add New Club{% endblock %}
+
+{% block content %}
+<h2>Add New Club</h2>
+<form method="POST" action="{{ url_for('add_club') }}">
+  <label>Club Name:</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>Club Type:</label><br>
+  <input type="text" name="type" required><br><br>
+
+  <label>Formation Semester:</label><br>
+  <input type="text" name="semester" required><br><br>
+
+  <label>Description:</label><br>
+  <textarea name="desc" required></textarea><br><br>
+
+  <label>Advisor ID:</label><br>
+  <input type="number" name="advisor_id" required><br><br>
+
+  <button type="submit">Create Club</button>
+</form>
+<a href="{{ url_for('clubs') }}">← Back to Clubs</a>
+{% endblock %}

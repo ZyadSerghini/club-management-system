@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Club Members{% endblock %}
+
+{% block content %}
+<h2>Members of Your Club</h2>
+<div>
+<table border="1">
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Join Date</th>
+    </tr>
+    {% for member in members %}
+    <tr>
+        <td>{{ member[0] }}</td>
+        <td>{{ member[1]}} {{member[2]}}</td>
+        <td>{{ 'Active' if member[3] else 'Inactive' }}</td>
+        <td>{{ member[4] }}</td>
+    </tr>
+    {% endfor %}
+    <br>
+    
+</table>
+<br> <br><p>Active Members:</p>
+<table border='1'>
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Join Date</th>
+    </tr>
+    {% for active in active %}
+    
+    <tr>
+        <td>{{ active[0] }}</td>
+        <td>{{ active[1]}} {{active[2]}}</td>
+        <td>{{ active[3] }}</td>
+    </tr>
+    {% endfor %}
+</table></div>
+
+<br>
+<a href="{{ url_for('add_member') }}">➕ Add Member</a><br>
+<a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+{% endblock %}

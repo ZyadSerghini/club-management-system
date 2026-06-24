@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<body>
+  <h1>Welcome, SAO Admin!</h1>
+  <p>You are logged in as an administrator.</p>
+  <div>
+    <p>🚹 <a href="{{ url_for('clubs') }}">View Clubs</a></p>
+    <p>🎉 <a href="{{ url_for('events') }}">View Events</a></p>
+</div>
+</body>
+</html>
+{%endblock%}

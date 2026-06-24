@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Edit Club{% endblock %}
+
+{% block content %}
+<h2>Edit Club</h2>
+<div>
+<form method="POST">
+  <label>Club Name:</label>
+  <input type="text" name="name" value="{{ club[2] }}" required><br>
+
+  <label>Club Type:</label>
+  <input type="text" name="type" value="{{ club[3] }}" required><br>
+
+  <label>Formation Semester:</label>
+  <input type="text" name="semester" value="{{ club[4] }}" required><br>
+
+  <label>Description:</label>
+  <textarea name="desc" value ="{{ club[5] }}" required></textarea><br>
+
+  <label>Advisor ID:</label><br>
+  <input type="number" name="advisor_id" value="{{ club[1] }}" required><br>
+
+  <button type="submit">Save Changes</button>
+</form>
+</div>
+
+{% if session['user_type'] == 'sao_admin' %}
+  <a href="{{ url_for('clubs') }}">← Back to Clubs</a>
+{% elif session['user_type'] == 'board_member' %}
+  <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+{% endif %}
+{% endblock %}
