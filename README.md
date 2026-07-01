@@ -13,12 +13,31 @@ The interesting part of the project is the data model: it uses a **supertype/sub
 
 ## 📩 Table of contents
 
+- [Running it](#running-it)
 - [Tech stack](#tech-stack)
 - [How it works](#how-it-works)
 - [The data model (ISA hierarchy)](#the-data-model-isa-hierarchy)
 - [Tables](#tables)
 - [View and trigger function](#view-and-trigger-function)
-- [Running it](#running-it)
+
+## Running it
+
+Requires Python 3.12 and a local PostgreSQL server.
+
+```bash
+# 1. dependencies (uv)
+uv python pin 3.12
+uv sync
+
+# 2. database
+sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'serghiniz';"
+sudo -u postgres createdb ClubManagementSystem
+sudo -u postgres psql -d ClubManagementSystem -f init_db.sql
+sudo -u postgres psql -d ClubManagementSystem -f add_values.sql
+
+# 3. run
+uv run app.py          # http://localhost:5000
+```
 
 ## Tech stack
 
@@ -180,22 +199,3 @@ The two many-to-many relationships are resolved with junction tables: `Membershi
 
 - **`ActiveMembers`** — a view selecting every `Membership` row where `MBR_STATUS = true`; used by the board member's member list.
 - **`update_member_status()`** — a PL/pgSQL function meant to flip a student's membership to active once they have attended ≥ 2 distinct events. _Note: it is defined but not bound to a `CREATE TRIGGER`, and it references a `Member` table that does not exist — so it does not currently run._
-
-## Running it
-
-Requires Python 3.12 and a local PostgreSQL server.
-
-```bash
-# 1. dependencies (uv)
-uv python pin 3.12
-uv sync
-
-# 2. database
-sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'serghiniz';"
-sudo -u postgres createdb ClubManagementSystem
-sudo -u postgres psql -d ClubManagementSystem -f init_db.sql
-sudo -u postgres psql -d ClubManagementSystem -f add_values.sql
-
-# 3. run
-uv run app.py          # http://localhost:5000
-```
