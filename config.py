@@ -1,6 +1,6 @@
 DB_NAME = "ClubManagementSystem"
 DB_USER = "postgres"
-DB_PASS = "serghiniz"
+DB_PASS = "clubpass"
 DB_HOST = "localhost"
 DB_PORT = "5432"
 SECRET_KEY = "dev"

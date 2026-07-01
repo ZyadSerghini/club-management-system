@@ -30,7 +30,7 @@ uv python pin 3.12
 uv sync
 
 # 2. database
-sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'serghiniz';"
+sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'clubpass';"
 sudo -u postgres createdb ClubManagementSystem
 sudo -u postgres psql -d ClubManagementSystem -f init_db.sql
 sudo -u postgres psql -d ClubManagementSystem -f add_values.sql
